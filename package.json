@@ -1,0 +1,46 @@
+{
+	"name": "frontend-ajax-table",
+	"private": true,
+	"description": "Show data from AJAX response in the table",
+	"version": "1.0.0",
+	"license": "MIT",
+	"author": "Fabrika",
+	"main": "src/index.html",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/fabrikaodua/frontend-ajax-table.git"
+	},
+	"keywords": [
+		"ajax",
+		"webapp",
+		"home work",
+		"training task"
+	],
+	"dependencies": {
+		"jquery": "2.2.4"
+	},
+	"devDependencies": {
+		"grunt": "1.0.1",
+		"grunt-targethtml": "0.2.6",
+		"grunt-contrib-jshint": "1.0.0",
+		"grunt-contrib-watch": "1.0.0",
+		"grunt-contrib-jasmine": "1.0.3",
+		"grunt-contrib-clean": "^0.6.0",
+		"jasmine-core": "2.2.0",
+		"systemjs-builder": "0.15.15",
+		"systemjs-plugin-json": "0.1.0",
+		"systemjs-plugin-css": "0.1.20",
+		"systemjs-plugin-text": "0.0.8",
+		"bower-traceur": "git://github.com/jmcriffey/bower-traceur"
+	},
+	"scripts": {
+		"test": "grunt test",
+		"build": "grunt build",
+		"live": "grunt live",
+		"code": "grunt code"
+	},
+	"engines" : { 
+		"node" : ">=0.10.0",
+		"npm" : "*" 
+	}
+}
