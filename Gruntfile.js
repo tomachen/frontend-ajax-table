@@ -58,7 +58,7 @@ module.exports = function (grunt) {
 		},
 		systemjs: {
 			build: {
-				src: SRC_DIR + '/index.js',
+				src: SRC_DIR + '/modules/main.js',
 				dest: BUILD_DIR + '/build.js',
 				options: {
 					baseURL: SRC_DIR,
