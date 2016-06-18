@@ -38,6 +38,7 @@ module.exports = function (grunt) {
 				builder.loader.paths[pathAlias] = relativeUrl;
 			});
 		}
+		
 
 		//Fix packages in config. They  become relative to builder root
 		//if (builder.loader.packages) {
@@ -56,11 +57,11 @@ module.exports = function (grunt) {
 		//resolve src. Make path relative to baseURL because of strange behaviour of System Builder
 		if (taskConfig.src instanceof Array) {
 			taskConfig.src = taskConfig.src.map(function (src) {
-				return path.relative(options.baseURL, src); 
+				return path.relative(options.baseURL, src).replace(/\\/g, '/'); 
 			}).join(' + ');
 		}
 		else {
-			taskConfig.src = path.relative(options.baseURL, taskConfig.src);
+			taskConfig.src = path.relative(options.baseURL, taskConfig.src).replace(/\\/g, '/');
 		}
 		
 		function build(params) {

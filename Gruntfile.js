@@ -33,6 +33,20 @@ module.exports = function (grunt) {
 			build: [BUILD_DIR],
 			test: [TEST_DIR + '/test.js']
 		},
+		copy: {
+			build: {
+				files: [
+					//copy folders
+					{
+						cwd: SRC_DIR + '/styles',
+						src: '**',
+						dest: BUILD_DIR + '/styles',
+						flatten: false,
+						expand: true
+					}
+				]
+			}
+		},
 		jasmine: {
 			dev: {
 				options: {
@@ -71,7 +85,7 @@ module.exports = function (grunt) {
 				}
 			},
 			test: {
-				src:  TEST_DIR + '/spec.js',
+				src: TEST_DIR + '/spec.js',
 				dest: TEST_DIR + '/test.js',
 				options: {
 					baseURL: TEST_DIR,
@@ -88,6 +102,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-targethtml');
 	grunt.loadTasks(TASKS_DIR + '/grunt-systemjs-bundler/tasks');
 
@@ -95,5 +110,5 @@ module.exports = function (grunt) {
 	grunt.registerTask('live', ['watch']);
 	grunt.registerTask('code', ['jshint:dev']);
 	grunt.registerTask('test', ['systemjs:test', 'jasmine', 'clean:test']);
-	grunt.registerTask('build', ['clean:build', 'systemjs:build', 'targethtml:build']);
+	grunt.registerTask('build', ['clean:build', 'systemjs:build', 'targethtml:build', 'copy:build']);
 };

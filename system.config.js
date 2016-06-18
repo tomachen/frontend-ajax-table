@@ -14,12 +14,13 @@ System.config({
 	},
 	map: {
 		'../../src/': 'source:',
-		'../../': 'project:',
-		'traceur': '../node_modules/bower-traceur/traceur.js'
+		'../../': 'project:'
+		
 	},
 	paths: {
 		'project:*': '../*',
 		'source:*': '../src/*',
+		'traceur': '../node_modules/bower-traceur/traceur.js',
 		//loader plugins
 		'json': '../node_modules/systemjs-plugin-json/json.js',
 		'css': '../node_modules/systemjs-plugin-css/json.js',
