@@ -2,8 +2,7 @@ module.exports = function (grunt) {
 	var SRC_DIR = 'src',
 		TEST_DIR = 'test',
 		BUILD_DIR = 'build',
-        TASKS_DIR = 'tasks',
-		MODULE_NAME = 'sample-module';
+        TASKS_DIR = 'tasks';
 
 	grunt.initConfig({
 		watch: {
@@ -104,7 +103,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-targethtml');
-	grunt.loadTasks(TASKS_DIR + '/grunt-systemjs-bundler/tasks');
+	grunt.loadNpmTasks('grunt-systemjs-bundler');
 
 
 	grunt.registerTask('live', ['watch']);
