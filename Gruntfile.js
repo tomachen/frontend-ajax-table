@@ -76,7 +76,7 @@ module.exports = function (grunt) {
 				options: {
 					baseURL: SRC_DIR,
 					config: 'system.config.js',
-					type: 'sfx', //sfx, bundle
+					type: 'build', //build, bundle
 					format: 'umd',
 					minify: true,
 					mangle: true,
@@ -89,7 +89,7 @@ module.exports = function (grunt) {
 				options: {
 					baseURL: TEST_DIR,
 					config: 'system.config.js',
-					type: 'sfx', //sfx, bundle
+					type: 'build', //build, bundle
 					format: 'umd',
 					minify: false
 				}
