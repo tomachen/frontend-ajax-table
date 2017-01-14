@@ -18,6 +18,7 @@ table {
 	color: rgba(0,0,0,.87);
 	border-collapse: separate;
 	border-spacing: 0;
+	overflow: hidden;
 }
 
 table th {
