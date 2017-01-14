@@ -28,6 +28,7 @@
 		"grunt-contrib-jasmine": "1.0.3",
 		"grunt-contrib-clean": "1.0.0",
 		"grunt-contrib-copy": "1.0.0",
+		"grunt-browser-sync": "2.2.0",
 		"jasmine-core": "2.2.0",
 		"systemjs-plugin-json": "0.1.0",
 		"systemjs-plugin-css": "0.1.26",
@@ -36,9 +37,9 @@
 		"grunt-systemjs-bundler": "git://github.com/constgen/grunt-systemjs-bundler#0.5.0"
 	},
 	"scripts": {
+		"start": "grunt start",
 		"test": "grunt test",
 		"build": "grunt build",
-		"live": "grunt live",
 		"code": "grunt code"
 	},
 	"engines" : { 

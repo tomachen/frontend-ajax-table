@@ -4,19 +4,6 @@ module.exports = function (grunt) {
 	var BUILD_DIR = 'build'
 
 	grunt.initConfig({
-		watch: {
-			sources: {
-				files: [
-					SRC_DIR + '/**/*.*',
-					TEST_DIR + '/**/*.*'
-				],
-				//tasks: ['jshint'],
-				options: {
-					interrupt: true,
-					livereload: 35729
-				}
-			}
-		},
 		jshint: {
 			dev: {
 				options: {
@@ -48,11 +35,6 @@ module.exports = function (grunt) {
 		jasmine: {
 			dev: {
 				options: {
-					//polyfills: [''],
-					vendor: [
-						'./node_modules/systemjs/dist/system.src.js'
-					],
-					//helpers: [''],
 					keepRunner: false,
 					outfile: TEST_DIR + '/test.html',
 					specs: [TEST_DIR + '/test.js']
@@ -93,6 +75,54 @@ module.exports = function (grunt) {
 					minify: false
 				}
 			}
+		},
+		watch: {
+			sources: {
+				files: [
+					SRC_DIR + '/**/*.*',
+					TEST_DIR + '/**/*.*'
+				],
+				//tasks: ['jshint'],
+				options: {
+					interrupt: true,
+					livereload: 35729
+				}
+			}
+		},
+      browserSync: {
+			bsFiles: {
+				src: [
+					SRC_DIR + '/**/*.js',
+					SRC_DIR + '/**/*.css',
+					SRC_DIR + '/**/*.html'
+				]
+			},
+			//https://www.browsersync.io/docs/options
+			options: {
+				watchTask: true,
+				server: {
+					baseDir: '.'
+				},
+				// proxy: '',
+				// host: '',
+				// port: 3000,
+				// https: true,
+				startPath: '/' + SRC_DIR,
+				// browser: ['google chrome', 'firefox'']
+				// localOnly: true,
+				cors: false,
+				open: 'external',
+				notify: false,
+				reloadOnRestart: true,
+				reloadDelay: 0,
+				reloadDebounce: 0,
+				reloadThrottle: 0,
+				ghostMode: {
+					clicks: true,
+					forms: true,
+					scroll: true
+				}
+			}
 		}
 	});
 
@@ -103,9 +133,9 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-targethtml');
 	grunt.loadNpmTasks('grunt-systemjs-bundler');
+	grunt.loadNpmTasks('grunt-browser-sync');		
 
-
-	grunt.registerTask('live', ['watch']);
+	grunt.registerTask('start', ['browserSync', 'watch']);
 	grunt.registerTask('code', ['jshint:dev']);
 	grunt.registerTask('test', ['systemjs:test', 'jasmine', 'clean:test']);
 	grunt.registerTask('build', ['clean:build', 'systemjs:build', 'targethtml:build', 'copy:build']);
