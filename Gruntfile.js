@@ -1,8 +1,7 @@
 module.exports = function (grunt) {
-	var SRC_DIR = 'src',
-		TEST_DIR = 'test',
-		BUILD_DIR = 'build',
-        TASKS_DIR = 'tasks';
+	var SRC_DIR = 'src'
+	var TEST_DIR = 'test'
+	var BUILD_DIR = 'build'
 
 	grunt.initConfig({
 		watch: {
@@ -21,7 +20,7 @@ module.exports = function (grunt) {
 		jshint: {
 			dev: {
 				options: {
-					jshintrc: TASKS_DIR + '/.jshintrc'
+					jshintrc: '.jshintrc'
 				},
 				src: [
 					SRC_DIR + '/**/*.js'
@@ -51,7 +50,7 @@ module.exports = function (grunt) {
 				options: {
 					//polyfills: [''],
 					vendor: [
-						'./node_modules/systemjs-builder/node_modules/systemjs/dist/system.src.js'
+						'./node_modules/systemjs/dist/system.src.js'
 					],
 					//helpers: [''],
 					keepRunner: false,

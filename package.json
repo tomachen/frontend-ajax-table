@@ -4,7 +4,7 @@
 	"description": "Show data from AJAX response in the table",
 	"version": "1.0.0",
 	"license": "MIT",
-	"author": "Fabrika",
+	"author": "Constantine Genchevsky",
 	"main": "src/index.html",
 	"repository": {
 		"type": "git",
@@ -33,7 +33,7 @@
 		"systemjs-plugin-css": "0.1.26",
 		"systemjs-plugin-text": "0.0.8",
 		"bower-traceur": "git://github.com/jmcriffey/bower-traceur",
-		"grunt-systemjs-bundler": "git://github.com/constgen/grunt-systemjs-bundler#0.4.0"
+		"grunt-systemjs-bundler": "git://github.com/constgen/grunt-systemjs-bundler#0.5.0"
 	},
 	"scripts": {
 		"test": "grunt test",
